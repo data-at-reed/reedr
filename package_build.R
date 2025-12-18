@@ -13,3 +13,5 @@ use_data_raw("grad_rates")
 use_r("grad_rates")
 
 document()
+
+use_git_ignore(".Rhistory")
