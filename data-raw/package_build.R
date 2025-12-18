@@ -15,3 +15,7 @@ use_r("grad_rates")
 document()
 
 use_git_ignore(".Rhistory")
+
+check()
+build()
+install()
