@@ -1,2 +1,2 @@
-# reedr
-package of reed data
+remotes::install_github("data-at-reed/reedr")
+library(reedr)
