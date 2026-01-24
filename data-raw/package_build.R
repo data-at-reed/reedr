@@ -1,27 +1,14 @@
+## Package build and maintenance script
 library(devtools)
-library(usethis)
-library(readr)
 
-create_package(".")
+# 1. Run data preparation scripts
+source("data-raw/grad_rates.R")
 
-grad_rates <- read_csv("datasets/grad_rates.csv")
-grad_rates_2011_2024 <- read_csv("datasets/grad_rates.csv")
-
-
-use_data(grad_rates)
-use_data(grad_rates_2011_2024)
-
-
-use_data_raw("grad_rates")
-use_data_raw("grad_rates_2011_2024")
-
-use_r("grad_rates")
-use_r("grad_rates_2011_2024")
-
+# 2. Update documentation
 document()
 
-use_git_ignore(".Rhistory")
-
+# 3. Check package for errors
 check()
-build()
+
+# 4. Install locally
 install()
